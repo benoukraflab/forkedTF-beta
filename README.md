@@ -24,13 +24,8 @@ For an extended view of the options please visit the documentation in our [vigne
 This function helps in the exploration of binding partners in a cell line. Input the `mainTF`, `cell` line of interest and the `cobinding_threshold` to generate a PDF report of the binding partners.
 
 ```r
-<<<<<<< HEAD
 library("forkedTF")
 miniCofactorReport( TF = "CEBPB", cell = "K562",cobinding_threshold=.06)
-=======
-library("FPWM")
-miniCofactorReport( TF = "CEBPB", cell = "K562", cobinding_threshold=.06)
->>>>>>> 3cbca18559f9e1e47d4038b8a0bfde0d610cea27
 ```
 <div align="center">
 <a name="miniCofactorReport"/>
