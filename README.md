@@ -57,3 +57,6 @@ Save the FPWM to a local file can be used in matrix scanning or matrix clusterin
 write.FPWM(FPWM = fpwm, format = "transfac", fileName = "FPWM.transfact" )
 write.FPWM(FPWM = fpwm, format = "FPWMtransfac", fileName = "FPWM.FPWMtransfac" )
 ```
+## License
+
+This project is licensed under GNU General Public License - see [LICENSE.txt](./LICENSE.txt) for details.
