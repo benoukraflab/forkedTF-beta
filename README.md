@@ -1,5 +1,6 @@
-# forkedTF (ver. 0.1.0)
+# forkedTF
 forkedTF builds a graph model of multiple PWMs (or forked-logos) to have a better representation of the different motif a TF uses when binding in complex with other transcription factors.
+### Current version: 0.1.0
 ### Installation
 Type the following in R console:
 ```r
