@@ -19,7 +19,7 @@ devtools::install_github("https://github.com/benoukraflab/forkedTF")
    - [grid](https://www.rdocumentation.org/packages/grid/versions/3.6.1) (>= 3.6.1)
 
 ## Documentation
-For an extended view of the options please visit the documentation in our [vignette](http://benoukraf-lab.com/vignettes/vignette-FPWM.html)
+A detailed description of all forkedTF's features is available [here](http://benoukraf-lab.com/vignettes/vignette-FPWM.html).
 
 ## Quick usage
 #### MiniCofactor Report
