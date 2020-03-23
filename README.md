@@ -1,5 +1,6 @@
 # forkedTF
-forkedTF builds a graph model of multiple PWMs (or forked-logos) to have a better representation of the different motif a TF uses when binding in complex with other transcription factors.
+forkedTF is an R-library that generates Forked-PMW (FPMW) and Forked-Sequence Logos (F-Logos) for a better depiction of the sequence affinity (DNA sequence and DNA methylation level) of a TF of interest together with those of a segregated list of partners. Indeed, in contrast to current methods that aggregate binding sites of dimer TFs into a single PWM/logo, FPWM and F-Logo represent dimer partner PWM and sequence logos as forked from the main TF motif. Consequently, forkedTF improves PWM models of TF dimers, thereby enhancing our understanding of TF cooperativity, and opens a novel avenue for accurate TFBS prediction.
+ 
 ### Current version: 0.1.0
 ### Installation
 Type the following in R console:
