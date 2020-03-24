@@ -1,18 +1,18 @@
 #' A function to generate an FPWM class object.
 #'
-#' This function assigns proper data to their associated slots of a S4 classe. This information is either provided by user, or exported from TFregulomeR's dataware using user specified data.
-#' @param mainTF character with the name of the main TF.
-#' @param partners List or character vector with the names of the partner TFs.
-#' @param cell character with the name of the main TF.
-#' @param mainTF_MMID character with the name of the main TF.
-#' @param partners_MMID character with the name of the main TF.
-#' @param forkPosition This argument, defines from which point on, the matrix needs to be forked, or in the other words, up to which point two exclusive matrices need to be aggregated.
-#' @param probabilityMatrix Logical, whether the function should return a frequency matrix or probability matrix (Default FALSE). 
-#' @param scaleFrequencyCounts Logical, whether the count matrix should have equal rowSums across all the rows (Default FALSE). 
-#' @param flipMatrix Logical, whether to apply reverse complement in case the core motif is after the forkPosition (Default FALSE). 
+#' This function creates the FPWM object and performs the fork in the motif.
+#' @param mainTF [character] character with the name of the main TF.
+#' @param partners [character list or vector] List or character vector with the names of the partner TFs.
+#' @param cell [character] with the name of the main TF.
+#' @param mainTF_MMID [character] with the name of the main TF.
+#' @param partners_MMID [character vector] with the name of the main TF.
+#' @param forkPosition [numeric] defines the postion in the matrix where the motif will be forked.
+#' @param probabilityMatrix [logical] whether the function should return a frequency matrix or probability matrix (Default FALSE). 
+#' @param scaleFrequencyCounts [logical] whether the count matrix should have equal rowSums across all the rows (Default FALSE). 
+#' @param flipMatrix [logical] whether to apply reverse complement in case the core motif is after the forkPosition (Default FALSE). 
 #' @examples
-#' fpwm <- createFPWM(mainTF ="CEBPB", partners = c("ATF4","ATF7","JUND"), cell = "K562", forkPosition = 5)
-#' @return This component, returns a FPWM class object that can be used to plot or written in transfact format.
+#' fpwm <- createFPWM(mainTF ="CEBPB", partners = c("ATF4","ATF7","JUND","CEBPD"), cell = "K562", forkPosition = 5)
+#' @return returns a FPWM class object that can be used to plot or write in transfact format.
 #' @export
 createFPWM <- function( mainTF = NULL,
 						partners = NULL,

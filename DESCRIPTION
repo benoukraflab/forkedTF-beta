@@ -7,7 +7,7 @@ Depends: R (>= 3.6.0), methods
 Imports: graphics,
          grDevices,
          TFregulomeR (>= 1.2.0),
-         ggplot2 (>= 3.2.1),
+         ggplot2 (>= 3.3.0),
          gridExtra (>= 2.3),
          gridGraphics (>= 0.4.1),
          ggseqlogo (>= 0.1),

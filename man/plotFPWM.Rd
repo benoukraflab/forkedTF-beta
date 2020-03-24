@@ -2,7 +2,7 @@
 % Please edit documentation in R/plotFPWM.R
 \name{plotFPWM}
 \alias{plotFPWM}
-\title{A function to plot the forked Position Weight Matrix}
+\title{A function to plot the Forked Position Weight Matrix}
 \usage{
 plotFPWM(
   FPWM,
@@ -11,30 +11,34 @@ plotFPWM(
   width = 7,
   textSize = 7,
   scaleBarplot = TRUE,
+  legend = c(0.5, 0.95),
   pdfName = "plotFPWM.pdf"
 )
 }
 \arguments{
-\item{FPWM}{is an object of S4 class with modified and converted data ready to be plotted.}
+\item{FPWM}{[FPWM S4 object].}
 
-\item{Methylation}{is a logical value. If it set on TRUE, Methylation level chart will also be plotted. If Flase, only sequence logos will be shown.}
+\item{Methylation}{[logical] If it set on TRUE, methylation level will be drawn as barplot. Default: TRUE.}
 
-\item{height}{Height (inches) of the pdf output.}
+\item{height}{[numeric] Height (inches) of the pdf output. Default: 12.}
 
-\item{width}{Width (inches) of the pdf output.}
+\item{width}{[numeric] Width (inches) of the pdf output. Default: 7.}
 
-\item{textSize}{Size of the text on the plot default 8.}
+\item{textSize}{[numeric] Size of the text on the plot. Default: 7.}
 
-\item{scaleBarplot}{Logical value, TRUE to keep the  .}
+\item{scaleBarplot}{[logical] TRUE to scale the height of the barplot across all the forked motifs. FALSE will scale per-motif. Default: TRUE.}
 
-\item{pdfName}{Name for the output pdf.}
+\item{legend}{[numeric Vector] Coordinates where the methylation legend will be drawn. Write "none" to prevent the function from ploting the legend. Default: c(0.5,0.95)}
+
+\item{pdfName}{[character] Name for the output pdf.}
 }
 \value{
 Plots the FPWM into a PDF file.
 }
 \description{
-This function takes the generated class object and plots a forked position weight matrix.
+This function plots FPWMs.
 }
 \examples{
+fpwm <- createFPWM(mainTF ="CEBPB",partners = c("ATF4","ATF7","ATF3","JUND","FOS","CEBPD"), cell = "K562", forkPosition = 5)
 plotFPWM(fpwm, pdfName="fpwm_plot.pdf")
 }
