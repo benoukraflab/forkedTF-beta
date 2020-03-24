@@ -2,7 +2,7 @@
 % Please edit documentation in R/miniCofactorReport.R
 \name{miniCofactorReport}
 \alias{miniCofactorReport}
-\title{Produces a cofactorReport}
+\title{Produces a miniCofactorReport}
 \usage{
 miniCofactorReport(
   TF,
@@ -16,27 +16,27 @@ miniCofactorReport(
 )
 }
 \arguments{
-\item{TF}{Main TF of interest.}
+\item{TF}{[character] Main TF of interest.}
 
-\item{cell}{Cell .}
+\item{cell}{[character] Cell of interest.}
 
-\item{cobinding_threshold}{Only the co-factors with co-binding percentages more than this threshold value will be reported. By default the threshold is 0.05.}
+\item{cobinding_threshold}{[numeric] Only the co-factors with co-binding percentages more than this threshold value will be reported. By default the threshold is 0.05.}
 
-\item{Methylation}{Logical, TRUE to retrieve Cytosine methylation information.}
+\item{Methylation}{[logical] TRUE to retrieve cytosine methylation information.}
 
-\item{includeMotifOnly}{Logical, TRUE if you wish to include only peaks that contain the known binding motif.}
+\item{includeMotifOnly}{[logical] TRUE if you wish to include only peaks that contain the known binding motif.}
 
-\item{height}{Height in inch for the plot.}
+\item{height}{[numeric] Height in inch for the plot.}
 
-\item{width}{Width in inch for the plot.}
+\item{width}{[numeric] Width in inch for the plot.}
 
-\item{pdfName}{Name of the pdf to be saved.}
+\item{pdfName}{[character] Name of the pdf to be saved.}
 }
 \value{
 A PDF file with the cofactorReport.
 }
 \description{
-This function allows you to get a PDF report of top cofactors along with DNA methylation for a TF.
+This function allows you to get a PDF report of top cofactors along with DNA methylation information for a motif of a TF.
 }
 \examples{
 miniCofactorReport(TF = "CEBPB",cell = "K562")

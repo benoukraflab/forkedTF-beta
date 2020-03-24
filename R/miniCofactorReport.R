@@ -1,14 +1,14 @@
-#' Produces a cofactorReport
+#' Produces a miniCofactorReport
 #'
-#' This function allows you to get a PDF report of top cofactors along with DNA methylation for a TF.
-#' @param TF Main TF of interest.
-#' @param cell Cell .
-#' @param cobinding_threshold Only the co-factors with co-binding percentages more than this threshold value will be reported. By default the threshold is 0.05.
-#' @param Methylation Logical, TRUE to retrieve Cytosine methylation information.
-#' @param includeMotifOnly Logical, TRUE if you wish to include only peaks that contain the known binding motif.
-#' @param height Height in inch for the plot.
-#' @param width Width in inch for the plot.
-#' @param pdfName Name of the pdf to be saved.
+#' This function allows you to get a PDF report of top cofactors along with DNA methylation information for a motif of a TF.
+#' @param TF [character] Main TF of interest.
+#' @param cell [character] Cell of interest.
+#' @param cobinding_threshold [numeric] Only the co-factors with co-binding percentages more than this threshold value will be reported. By default the threshold is 0.05.
+#' @param Methylation [logical] TRUE to retrieve cytosine methylation information.
+#' @param includeMotifOnly [logical] TRUE if you wish to include only peaks that contain the known binding motif.
+#' @param height [numeric] Height in inch for the plot.
+#' @param width [numeric] Width in inch for the plot.
+#' @param pdfName [character] Name of the pdf to be saved.
 #' @return A PDF file with the cofactorReport.
 #' @keywords cofactorReport
 #' @export

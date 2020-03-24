@@ -1,14 +1,16 @@
-#' A function to plot the forked Position Weight Matrix
+#' A function to plot the Forked Position Weight Matrix
 #'
-#' This function takes the generated class object and plots a forked position weight matrix.
-#' @param FPWM is an object of S4 class with modified and converted data ready to be plotted.
-#' @param Methylation is a logical value. If it set on TRUE, Methylation level chart will also be plotted. If Flase, only sequence logos will be shown.
-#' @param height Height (inches) of the pdf output.
-#' @param width Width (inches) of the pdf output.
-#' @param textSize Size of the text on the plot default 8.
-#' @param scaleBarplot Logical value, TRUE to keep the  .
-#' @param pdfName Name for the output pdf.
+#' This function plots FPWMs.
+#' @param FPWM [FPWM S4 object].
+#' @param Methylation [logical] If it set on TRUE, methylation level will be drawn as barplot. Default: TRUE.
+#' @param height [numeric] Height (inches) of the pdf output. Default: 12.
+#' @param width [numeric] Width (inches) of the pdf output. Default: 7.
+#' @param textSize [numeric] Size of the text on the plot. Default: 7.
+#' @param scaleBarplot [logical] TRUE to scale the height of the barplot across all the forked motifs. FALSE will scale per-motif. Default: TRUE.
+#' @param legend [numeric Vector] Coordinates where the methylation legend will be drawn. Write "none" to prevent the function from ploting the legend. Default: c(0.5,0.95)
+#' @param pdfName [character] Name for the output pdf.
 #' @examples
+#' fpwm <- createFPWM(mainTF ="CEBPB",partners = c("ATF4","ATF7","ATF3","JUND","FOS","CEBPD"), cell = "K562", forkPosition = 5)
 #' plotFPWM(fpwm, pdfName="fpwm_plot.pdf")
 #' @return Plots the FPWM into a PDF file.
 #' @export
@@ -18,6 +20,7 @@ plotFPWM <- function(FPWM,
                      width = 7,
                      textSize = 7,
                      scaleBarplot = TRUE,
+                     legend = c(0.5,0.95),
                      pdfName = "plotFPWM.pdf")
 {
  # Making the text size uniform across geom and external theme
@@ -72,6 +75,8 @@ if(scaleBarplot == TRUE & Methylation == TRUE){
        databox <- plot_beta_score[order(plot_beta_score$meth, decreasing = FALSE),]
        databox$PO <- factor(databox$PO,levels(databox$PO)[order(as.numeric(levels(databox$PO)))])
 
+       legend_meth <- legend
+
        parentLogo_meth <- ggplot(data = databox,
                    aes(x = PO, y = as.numeric(as.character(number)),
                        fill = meth)) +
@@ -81,8 +86,9 @@ if(scaleBarplot == TRUE & Methylation == TRUE){
               axis.ticks.y=element_blank(), axis.ticks.x=element_blank(), axis.text.x=element_blank(),
               panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(),
               plot.margin = margin(t = 0, r = 0, b = 0, l = 5, unit = "pt"),
-              legend.position="none", 
-              text = element_text(size = text_size) ) +
+              legend.position=legend_meth, 
+              text = element_text(size = text_size), legend.title = element_blank(), legend.background = element_blank(),
+              legend.box.background = element_rect(colour = "white"),legend.text=element_text(size=22), legend.key.size = unit(1,"line") ) +
         stat_summary(fun = sum, aes(label = stat(sum_of_pos$sum), group = PO), geom = "text",vjust = -0.5,size=geom_text_size)
     } else {
       parentLogo_meth <- ggplot() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
