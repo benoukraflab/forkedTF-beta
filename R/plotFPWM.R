@@ -83,7 +83,7 @@ if(scaleBarplot == TRUE & Methylation == TRUE){
               plot.margin = margin(t = 0, r = 0, b = 0, l = 5, unit = "pt"),
               legend.position="none", 
               text = element_text(size = text_size) ) +
-        stat_summary(fun.y = sum, aes(label = stat(sum_of_pos$sum), group = PO), geom = "text",vjust = -0.5,size=geom_text_size)
+        stat_summary(fun = sum, aes(label = stat(sum_of_pos$sum), group = PO), geom = "text",vjust = -0.5,size=geom_text_size)
     } else {
       parentLogo_meth <- ggplot() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
                                 panel.background = element_blank())
@@ -137,7 +137,7 @@ if(scaleBarplot == TRUE & Methylation == TRUE){
                    plot.margin = margin(t = 0, r = 0, b = 0, l = 5, unit = "pt"),
                    panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
                    panel.background = element_blank(),legend.position="none",text = element_text(size = text_size)) +
-                   stat_summary(fun.y = sum, aes(label = stat(sum_of_pos$sum), group = PO), geom = "text",vjust = -0.5,size=geom_text_size)
+                   stat_summary(fun = sum, aes(label = stat(sum_of_pos$sum), group = PO), geom = "text",vjust = -0.5,size=geom_text_size)
         } else {
              p1j <- ggplot() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
                                 panel.background = element_blank())

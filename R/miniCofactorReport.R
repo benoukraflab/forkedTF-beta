@@ -158,14 +158,16 @@ FPWMcofactorReport_ui <- function(intersectPeakMatrix,
     colors_cobinding <- colorRampPalette(c("white","#D46A6A", "#801515", "#550000"))(11)
     cobinding_ylabel_new <- rev(gsub("\\-\\d+$","",cobinding_ylabel_new,perl=TRUE))
 
-    p1 <- ggplot(intersect_matrix_heatmap_i, aes(x=intersect_matrix_heatmap_i$new_y, 
-									   y=intersect_matrix_heatmap_i$value,
-									   fill = intersect_matrix_heatmap_i$value)) +
+    topIX <- length(cobinding_ylabel_new)
+    cobinding_ylabel_new[ topIX ] <-  paste0("All\n",as.character(intersect_matrix_heatmap_i$new_x)[topIX]) # adding the label all
+
+    p1 <- ggplot(intersect_matrix_heatmap_i, aes(x=new_y, 
+                                       y=value,
+                                       fill = value)) +
                      geom_bar(stat="identity")+ scale_fill_gradientn(colours=colors_cobinding,
                                              breaks=c(seq(0, 100, length=11)),
-                                             limits=c(0,100)) + coord_flip()+  
-                     scale_y_reverse(position = "bottom")+
-                     geom_text(aes(label=paste0(round(intersect_matrix_heatmap_i$value,digits=1)," %")), vjust=-.2, angle =90) +
+                                             limits=c(0,100)) + scale_y_reverse(position = "right") +  coord_flip() +
+                     geom_text(aes(label=paste0(round(value,digits=1)," %")), vjust=-.2, angle =90) +
                      theme(panel.background = element_blank(),
                            plot.background = element_blank(),
                            axis.title=element_blank(),
@@ -174,7 +176,7 @@ FPWMcofactorReport_ui <- function(intersectPeakMatrix,
                            axis.text.x = element_text(size=10),axis.text.y = element_text(size=12),
                            legend.position = "none") + 
                      scale_x_discrete(labels=cobinding_ylabel_new) 
-                             
+
     # motifs
     motif_plot_list_p <- list()
     count <- 1
@@ -239,8 +241,8 @@ FPWMcofactorReport_ui <- function(intersectPeakMatrix,
               colnames(sum_of_pos) <- c("pos", "sum")
               #plot beta score
               p1j <- ggplot(data = plot_beta_score[order(plot_beta_score$meth, decreasing = FALSE),],
-                            aes(x=pos,y=as.numeric(as.character(plot_beta_score$number)),
-                            fill=plot_beta_score$meth)) +
+                            aes(x=pos,y=as.numeric(as.character(number)),
+                            fill=meth)) +
                             geom_bar(colour="black", stat="identity") +
                             scale_fill_manual(values = barplot_color) + ylim(0, ylim) +
                             theme(axis.title.y=element_blank(), axis.title.x=element_blank(), axis.text.y=element_blank(),
@@ -248,7 +250,7 @@ FPWMcofactorReport_ui <- function(intersectPeakMatrix,
                             plot.margin = margin(t = 0, r = 0, b = 0, l = 5, unit = "pt"),
                             panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
                             panel.background = element_blank(),legend.position="none") +
-                            stat_summary(fun.y = sum, aes(label = stat(sum_of_pos$sum), group = pos), geom = "text",vjust = -0.5)
+                            stat_summary(fun = sum, aes(label = stat(sum_of_pos$sum), group = pos), geom = "text",vjust = -0.5)
     }
     else
     {
