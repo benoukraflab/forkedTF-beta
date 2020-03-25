@@ -62,11 +62,12 @@ Save the FPWM to a local file can be used in matrix scanning or matrix clusterin
 write.FPWM(FPWM = fpwm, format = "transfac", fileName = "FPWM.transfact" )
 write.FPWM(FPWM = fpwm, format = "FPWMtransfac", fileName = "FPWM.FPWMtransfac" )
 ```
-## Contributors
-   - Roberto Tirado-Magallanes
-   - Aida Ghayour-Khiavi
-   - Quy Xiao Xuan Lin
-   - Touati Benoukraf
+   
+## Cite
+A manuscript describing forkedTF has been submitted. If you are currently using fotkedTF, please cite us as follows:
+Tirado-Magallanes R, Ghayour-Khiavi A, Lin QXX, Usefi H, Jha S, Thomas-Chollier M, Thieffry, Benoukraf T.
+Representing Transcription Factor Dimer Binding Sites Using Forked-Position Weight Matrices and Forked-Sequence Logos
+[website: https://github.com/benoukraflab/forkedTF]
 
 ## License
 This project is licensed under GNU General Public License - see [LICENSE.txt](./LICENSE.txt) for details.
