@@ -68,7 +68,7 @@ A manuscript describing forkedTF has been submitted. If you are currently using 
 
 Tirado-Magallanes R, Ghayour-Khiavi A, Lin QXX, Usefi H, Jha S, Thomas-Chollier M, Thieffry D, Benoukraf T.
 *Representing Transcription Factor Dimer Binding Sites Using Forked-Position Weight Matrices and Forked-Sequence Logos*.
-[website: https://github.com/benoukraflab/forkedTF]
+version: 0.1.0, 2020, [website: https://github.com/benoukraflab/forkedTF]
 
 ## License
 This project is licensed under GNU General Public License - see [LICENSE.txt](./LICENSE.txt) for details.
