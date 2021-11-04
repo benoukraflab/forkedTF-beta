@@ -1,8 +1,9 @@
 Package: forkedTF
 Type: Package
 Title: Creation of Forked-Position Weight Matrices, a graph model of multiple PWMs.
-Version: 0.1.0
-Author: c(person("Roberto Tirado", email = "roberto@u.nus.edu"))
+Version: 0.2.0
+Author: c(person("Roberto Tirado",  email = "roberto@u.nus.edu", role = c("cre","aut")),
+          person("Walter Santana",  email = "wsantana@lcg.unam.mx", role = c("aut")))
 Depends: R (>= 3.6.0), methods
 Imports: graphics,
          grDevices,
@@ -19,4 +20,4 @@ License: GPL-3.0
 Encoding: UTF-8
 LazyData: true
 BugReports: https://github.com/benoukraflab/forkedTF/issues
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.2

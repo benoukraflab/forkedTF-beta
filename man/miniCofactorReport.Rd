@@ -7,12 +7,22 @@
 miniCofactorReport(
   TF,
   cell,
-  cobinding_threshold = 0.05,
+  filterBy = "mapped.peaks.ratio",
+  threshold = 0,
   Methylation = TRUE,
   includeMotifOnly = TRUE,
   height = 12,
   width = 7,
-  pdfName = NULL
+  shufflesNumber = 100,
+  shuffle_seed = 987,
+  universe = NULL,
+  tail = "lower",
+  pAdjust = "BY",
+  chromSizes = loadChromSizes("hg38"),
+  byChrom = FALSE,
+  included = 1,
+  pdfName = NULL,
+  server = "sg"
 )
 }
 \arguments{
@@ -20,7 +30,10 @@ miniCofactorReport(
 
 \item{cell}{[character] Cell of interest.}
 
-\item{cobinding_threshold}{[numeric] Only the co-factors with co-binding percentages more than this threshold value will be reported. By default the threshold is 0.05.}
+\item{filterBy}{[character] Threshold category to filter cobinding partners.
+Currently supported are: "mapped.peaks.ratio,effect.size,p.significance,p.value,q.significance,q.value,e.significance,e.value and fraction."}
+
+\item{threshold}{[numeric] Only the co-factors with co-binding percentages more than this threshold value will be reported. By default the threshold is 0.05.}
 
 \item{Methylation}{[logical] TRUE to retrieve cytosine methylation information.}
 
@@ -30,7 +43,34 @@ miniCofactorReport(
 
 \item{width}{[numeric] Width in inch for the plot.}
 
+\item{shufflesNumber}{The number of shuffled genomic regions to be created for
+theorical distribution (higher means more accurate).}
+
+\item{shuffle_seed}{The random seed to be used for shuffling.}
+
+\item{universe}{A set of genomic regions that prevent shuffles
+for occuring outside of it.}
+
+\item{tail}{If "lower" then, probabilities are P[X > x],
+if "higher", P[X <= x], if "both" then higher or lower is selected
+depending on the number of overlaps vs the theorical mean.}
+
+\item{pAdjust}{The method that will be used for correcting the p-values.
+BH, BY and bonferroni are available.}
+
+\item{chromSizes}{A vector containing all the chromosome
+lengths for the species in consideration.}
+
+\item{byChrom}{Will the shuffles stay in the chromosome they originate (TRUE)
+or can they be placed everywhere on the genome (FALSE)}
+
+\item{included}{Represents the fraction of each regions that can
+be outside of the universe.}
+
 \item{pdfName}{[character] Name of the pdf to be saved.}
+
+\item{server}{[character] server localtion to be linked, either 'sg' or 'ca'.
+for 'Singapore' or 'Canada', respectively.}
 }
 \value{
 A PDF file with the cofactorReport.
