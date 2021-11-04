@@ -39,6 +39,7 @@ miniCofactorReport(TF = "JUND",cell = "HepG2")
 </a>
 </div>
 
+In addition to finding the factor with the highest peak overlap, using the parameter `filterBy="q.significance"` we can compute a -log10(Adjusted P-value) from an enrichment test as implemented in https://github.com/remap-cisreg/ReMapEnrich
 ```r
 library("forkedTF")
 miniCofactorReport(TF = "JUND",cell = "HepG2", filterBy="q.significance"
