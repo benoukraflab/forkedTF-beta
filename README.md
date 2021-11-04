@@ -66,7 +66,7 @@ write.FPWM(FPWM = fpwm, format = "FPWMtransfac", fileName = "FPWM.FPWMtransfac" 
 ## Cite
 A manuscript describing forkedTF has been submitted. If you are currently using forkedTF, please cite us as follows: 
 
-Tirado-Magallanes R, Ghayour-Khiavi A, Lin QXX, Usefi H, Jha S, Thomas-Chollier M, Thieffry D, Benoukraf T.
+Tirado-Magallanes R, Santana-Garcia W, Ghayour-Khiavi A, Lin QXX, Usefi H, Jha S, Thomas-Chollier M, Thieffry D, Benoukraf T.
 *Representing Transcription Factor Dimer Binding Sites Using Forked-Position Weight Matrices and Forked-Sequence Logos*.
 version: 0.1.0, 2020, [website: https://github.com/benoukraflab/forkedTF]
 
