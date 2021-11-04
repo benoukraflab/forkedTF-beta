@@ -35,7 +35,7 @@ miniCofactorReport(TF = "JUND",cell = "HepG2")
 ```
 <div align="center">
 <a name="miniCofactorReport"/>
-<img src="./inst/MM1_HSA_HepG2_JUND_cofactor_minireport-1.png" alt="miniCofactorReport" width="420" height="630" ></img>
+<img src="./inst/MM1_HSA_HepG2_JUND_cofactor_minireport-1.png" alt="miniCofactorReport" width="400" height="630" ></img>
 </a>
 </div>
 
@@ -45,7 +45,7 @@ miniCofactorReport(TF = "JUND",cell = "HepG2", filterBy="q.significance"
 ```
 <div align="center">
 <a name="miniCofactorReport"/>
-<img src="./inst/test_qsignificance-1.png" alt="miniCofactorReport" width="420" height="630" ></img>
+<img src="./inst/test_qsignificance-1.png" alt="miniCofactorReport" width="400" height="630" ></img>
 </a>
 </div>
 
