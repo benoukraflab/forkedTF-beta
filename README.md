@@ -31,7 +31,17 @@ This function helps in the exploration of binding partners in a cell line. Input
 
 ```r
 library("forkedTF")
-miniCofactorReport( TF = "CEBPB", cell = "K562",cobinding_threshold=.06)
+miniCofactorReport(TF = "JUND",cell = "HepG2")
+```
+<div align="center">
+<a name="miniCofactorReport"/>
+<img src="./inst/MM1_HSA_K562_CEBPB_cofactor_minireport.png" alt="miniCofactorReport" width="490" height="630" ></img>
+</a>
+</div>
+
+```r
+library("forkedTF")
+miniCofactorReport(TF = "JUND",cell = "HepG2", filterBy="q.significance"
 ```
 <div align="center">
 <a name="miniCofactorReport"/>
