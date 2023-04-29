@@ -1,9 +1,10 @@
 Package: forkedTF
 Type: Package
-Title: Creation of Forked-Position Weight Matrices, a graph model of multiple PWMs.
-Version: 0.2.0
+Title: Representation of Transcription Factor Dimer Binding Sites using Forked-Position Weight Matrices and Sequence Forked-Logos.
+Version: 1.0.0
 Author: c(person("Roberto Tirado",  email = "roberto@u.nus.edu", role = c("cre","aut")),
-          person("Walter Santana",  email = "wsantana@lcg.unam.mx", role = c("aut")))
+          person("Walter Santana",  email = "wsantana@lcg.unam.mx", role = c("aut")), 
+          person("Touati Benoukraf",  email = "tbenoukraf@mun.ca", role = c("aut")))
 Depends: R (>= 3.6.0), methods
 Imports: graphics,
          grDevices,
