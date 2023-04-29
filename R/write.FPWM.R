@@ -48,7 +48,7 @@ write.FPWM <- function( FPWM = NULL,
 		transfac_vector <- c( transfac_vector, paste0("parentLogo : ",FPWM@xid) )
 		transfac_vector <- c( transfac_vector, paste0("leafLogos : ", paste(unlist(FPWM@id),collapse=",")) )
 		transfac_vector <- c( transfac_vector, paste0("overlappingScore : ", paste(unlist(FPWM@score),collapse=",") ) )
-		transfac_vector <- c( transfac_vector, paste0("numberOfBasePairs : ", paste(unlist(FPWM@nSites),collapse=",") ) )
+		transfac_vector <- c( transfac_vector, paste0("numberOfMotifs : ", paste(unlist(FPWM@nSites),collapse=",") ) )
 		transfac_vector <- c( transfac_vector, paste0("numberOfOverlappingPeaks : ", paste(unlist(FPWM@nPeaks),collapse=",") ) )
 		transfac_vector <- c( transfac_vector, paste0("forkPosition : ",FPWM@forkPosition) )
 		transfac_vector <- c( transfac_vector, "XX", paste("P0","A","C","G","T",sep="\t")  )
@@ -95,7 +95,7 @@ write.FPWM <- function( FPWM = NULL,
 			}
 
 			transfac_vector <- c( transfac_vector, c("XX","CC program: forkedTF")  )
-			transfac_vector <- c( transfac_vector, paste0("CC numberOfBasePairs: ",FPWM@nSites[ix])  )
+			transfac_vector <- c( transfac_vector, paste0("CC numberOfMotifs: ",FPWM@nSites[ix])  )
 			transfac_vector <- c( transfac_vector, paste0("CC numberOfOverlappingPeaks: ",FPWM@nPeaks[ix])  )
 			transfac_vector <- c( transfac_vector, matrix_format  )
 			transfac_vector <- c( transfac_vector, c("XX","//")  )
