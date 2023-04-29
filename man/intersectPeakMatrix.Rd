@@ -45,7 +45,7 @@ intersectPeakMatrix(
 
 \item{server}{server localtion to be linked, either 'sg' or 'ca'.}
 
-\item{TFregulome_url}{TFregulomeR server is implemented in MethMotif server. If the MethMotif url is NO more "http://bioinfo-csi.nus.edu.sg/methmotif/" or "http://methmotif.org", please use a new url.}
+\item{TFregulome_url}{TFregulomeR server is implemented in MethMotif server. If the MethMotif url is NO more "https://methmotif.org" or "http://methmotif.org", please use a new url.}
 }
 \value{
 matrix of IntersectPeakMatrix class objects
