@@ -14,7 +14,7 @@ Imports: graphics,
          gridGraphics (>= 0.4.1),
          ggseqlogo (>= 0.1),
          cowplot (>= 1.0.0),
-         grid (>= 3.6.1)
+         grid (>= 3.6.1),
          LazyData (>= 1.1.0)
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
